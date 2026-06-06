@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>CS Map · UVT & Global | Interactive Multilevel Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<div class="page">
+  <header class="header">
+    <div class="header-eyebrow">
+      <span class="live-dot"></span> Multilevel CS Map · Denning & ACM 2023
+    </div>
+    <h1 class="header-title">Computer Science<br><em>discipline & frontiers</em></h1>
+    <p class="header-sub">UVT · West University of Timișoara — global perspective. Core areas, activities, open problems, influential people, venues, and local research DNA. <strong style="color:var(--gold)">Click the “ⓘ Expand” button</strong> on any card for deeper insights.</p>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-value">6</span><span class="stat-label">Core areas</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-value">24+</span><span class="stat-label">Global venues</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-value">12</span><span class="stat-label">UVT research groups</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-value">∞</span><span class="stat-label">Open problems</span></div>
+  </div>
+
+  <div class="map-graph">
+    <div class="graph-title">⤥ area dependency & influence map</div>
+    <div class="graph-grid">
+      <div class="graph-node"><span>ALGO</span> → foundation</div>
+      <div class="graph-node"><span>AI/ML</span> ← ALGO, DATA, SYS</div>
+      <div class="graph-node"><span>SE/PL</span> ↔ ALGO, HCI, SYS</div>
+      <div class="graph-node"><span>SYS/ARCH</span> → all computational layers</div>
+      <div class="graph-node"><span>DATA</span> ↔ AI, ALGO, SEC</div>
+      <div class="graph-node"><span>SECURITY</span> ← SYS, DATA, PL</div>
+    </div>
+    <div class="relation-note">⟡ dependencies: arrows show strong influence · cross-cutting relations visible per area ⟡</div>
+  </div>
+
+  <div class="areas-container" id="areasContainer"></div>
+
+  <footer class="footer">
+    <span>✶ Multilevel CS map — based on ACM/IEEE CS2023 & Denning's pillars</span>
+    <span>|</span>
+    <span>📍 Department of Computer Science, UVT — research groups: LPD, AI Lab, DB, Systems, Algorithms, Cybersecurity</span>
+    <span>|</span>
+    <span>🌍 global venues & open problems continuously evolve</span>
+    <span>|</span>
+    <span>🧠 <strong>Click “ⓘ Expand”</strong> on any card to open detailed modal</span>
+  </footer>
+</div>
+
+<div id="modal" class="modal-overlay">
+  <div class="modal-container">
+    <button class="modal-close" id="closeModalBtn">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="javascript.js"></script>
+</body>
+</html>
